@@ -14,13 +14,15 @@ let available = [];
   
 function setup() {
     createCanvas(400, 400);
-    frameRate(30);
-    currentPlayer = floor(random(players.length));
-    for (let j = 0; j < 3; j++) {
-      for (let i = 0; i < 3; i++) {
-        available.push([i, j]);
-      }
-    }
+    w = width / 3;
+    h = height / 3;
+    // frameRate(30);
+    // currentPlayer = floor(random(players.length));
+    // for (let j = 0; j < 3; j++) {
+    //   for (let i = 0; i < 3; i++) {
+    //     available.push([i, j]);
+    //   }
+    // }
 }
 
 function equals3(a,b,c){
@@ -80,7 +82,7 @@ function nextTurn() {
         if (board[i][j] == ''){
             board[i][j] = human;
             currentPlayer = ai;
-            nextTurn;
+            bestMove();
         }
     }
   } 
